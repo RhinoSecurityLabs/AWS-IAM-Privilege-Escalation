@@ -342,7 +342,7 @@ An attacker with the `codestar:CreateProject` and `codestar:AssociateTeamMember`
 ### Potential Impact
 This would give the attacker read-only access to multiple different AWS services and full CodeStar access on the project they are now an Owner of.
 
-## 26. AddExistingLambdaLayerToLambdaFunctionWithRole
+## 26. Adding a malicious Lambda layer to an existing Lambda function
 ### Reference(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation-part-2
 
@@ -355,7 +355,7 @@ An attacker with the `lambda:UpdateFunctionConfiguration` permission can escalat
 ### Potential Impact
 This would give an attacker access to the privileges associated with the Lambda service role that is attached to that function, which could range from no privilege escalation to full administrator access to the account.
 
-## 27. AccessExistingSageMakerJupyterNotebook
+## 27. Passing a role to a new SageMaker Jupyter notebook
 ### Reference(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation-part-2
 
@@ -370,7 +370,7 @@ An attacker with the `sagemaker:CreateNotebookInstance`, `sagemaker:CreatePresig
 ### Potential Impact
 This would give an attacker access to the privileges associated with the SageMaker service role that is attached to that Jupyter notebook, which could range from no privilege escalation to full administrator access to the account.
 
-## 28. PassRoleToNewSageMakerJupyterNotebook
+## 28. Gaining access to an existing SageMaker Jupyter notebook
 ### Reference(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation-part-2
 
