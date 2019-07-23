@@ -5,7 +5,7 @@
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
 
 ### Description
-An attacker with the `iam:CreatePolicyVersion` permission can create a new version of an IAM policy that they have access to. This allows them to define their own custom permissions. When creating a new policy version, it needs to be set as the default version to take effect, which you would think would require the `iam:SetDefaultPolicyVersion` permission, but when creating a new policy version, it is possible to include a flag (`--set-as-default`) that will automatically create it as the new default version. That flag does not require the iam:SetDefaultPolicyVersion permission to use.
+An attacker with the `iam:CreatePolicyVersion` permission can create a new version of an IAM policy that they have access to. This allows them to define their own custom permissions. When creating a new policy version, it needs to be set as the default version to take effect, which you would think would require the `iam:SetDefaultPolicyVersion` permission, but when creating a new policy version, it is possible to include a flag (`--set-as-default`) that will automatically create it as the new default version. That flag does not require the `iam:SetDefaultPolicyVersion` permission to use.
 
 ### Required Permission(s)
 - `iam:CreatePolicyVersion`
@@ -344,7 +344,7 @@ This would give the attacker read-only access to multiple different AWS services
 
 ## 26. AddExistingLambdaLayerToLambdaFunctionWithRole
 ### Reference(s)
-- PLACEHOLDER
+- https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation-part-2
 
 ### Description
 An attacker with the `lambda:UpdateFunctionConfiguration` permission can escalate permissions by attaching a Lambda layer to an existing function to override a library that is in use by the function, where their malicious code could utilize the function's IAM role for AWS API calls.
@@ -357,7 +357,7 @@ This would give an attacker access to the privileges associated with the Lambda 
 
 ## 27. AccessExistingSageMakerJupyterNotebook
 ### Reference(s)
-- PLACEHOLDER
+- https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation-part-2
 
 ### Description
 An attacker with the `sagemaker:CreateNotebookInstance`, `sagemaker:CreatePresignedNotebookInstanceUrl`, and `iam:PassRole` permissions can escalate privileges by passing a role to a new SageMaker Jupyter notebook. Then, through the Jupyter UI, they can access the credentials belonging to the notebook for further exploitation.
@@ -372,7 +372,7 @@ This would give an attacker access to the privileges associated with the SageMak
 
 ## 28. PassRoleToNewSageMakerJupyterNotebook
 ### Reference(s)
-- PLACEHOLDER
+- https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation-part-2
 
 ### Description
 An attacker with the `sagemaker:CreatePresignedNotebookInstanceUrl` permission can escalate privileges by creating a signed URL For an existing SageMaker Jupyter notebook. Then, through the Jupyter UI, they can access the credentials belonging to the notebook for further exploitation.
