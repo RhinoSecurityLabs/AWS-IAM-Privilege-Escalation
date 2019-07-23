@@ -1,4 +1,4 @@
-# AWS Privilege Escalation Methods
+# AWS IAM Privilege Escalation Methods
 
 ## 1. Creating a new policy version
 ### Reference(s)
