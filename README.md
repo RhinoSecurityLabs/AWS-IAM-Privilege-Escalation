@@ -1,7 +1,11 @@
+# Table of Contents
+- [AWS IAM Privilege Escalation Methods](#aws-iam-privilege-escalation-methods)
+- [Prior Research, References, and Resources](#prior-research-references-and-resources)
+
 # AWS IAM Privilege Escalation Methods
 
 ## 1. Creating a new policy version
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
 
 ### Description
@@ -14,7 +18,7 @@ An attacker with the `iam:CreatePolicyVersion` permission can create a new versi
 This privilege escalation method could allow a user to gain full administrator access of the AWS account.
 
 ## 2. Setting the default policy version to an existing version
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
 
 ### Description
@@ -27,7 +31,7 @@ An attacker with the `iam:SetDefaultPolicyVersion` permission may be able to esc
 The potential impact is associated with the level of permissions that the inactive policy version has. This could range from no privilege escalation at all to gaining full administrator access to the AWS account, depending on what the inactive policy versions have access to.
 
 ## 3. Creating an EC2 instance with an existing instance profile
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
 
 ### Description
@@ -41,7 +45,7 @@ An attacker with the `iam:PassRole` and `ec2:RunInstances` permissions can creat
 This attack would give an attacker access to the set of permissions that the instance profile/role has, which again could range from no privilege escalation to full administrator access of the AWS account.
 
 ## 4. Creating a new user access key
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
 
 ### Description
@@ -54,7 +58,7 @@ An attacker with the `iam:CreateAccessKey` permission on other users can create 
 This method would give an attacker the same level of permissions as any user they were able to create an access key for, which could range from no privilege escalation to full administrator access to the account.
 
 ## 5. Creating a new login profile
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
 
 ### Description
@@ -67,7 +71,7 @@ An attacker with the `iam:CreateLoginProfile` permission on other users can crea
 This method would give an attacker the same level of permissions as any user they were able to create a login profile for, which could range from no privilege escalation to full administrator access to the account.
 
 ## 6. Updating an existing login profile
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
 
 ### Description
@@ -80,7 +84,7 @@ An attacker with the `iam:UpdateLoginProfile` permission on other users can chan
 This method would give an attacker the same level of permissions as any user they were able to update the login profile for, which could range from no privilege escalation to full administrator access to the account.
 
 ## 7. Attaching a policy to a user
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
 
 ### Description
@@ -93,7 +97,7 @@ An attacker with the `iam:AttachUserPolicy` permission can escalate privileges b
 An attacker would be able to use this method to attach the AdministratorAccess AWS managed policy to a user, giving them full administrator access to the AWS environment.
 
 ## 8. Attaching a policy to a group
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
 
 ### Description
@@ -106,7 +110,7 @@ An attacker with the `iam:AttachGroupPolicy` permission can escalate privileges 
 An attacker would be able to use this method to attach the AdministratorAccess AWS managed policy to a group, giving them full administrator access to the AWS environment.
 
 ## 9. Attaching a policy to a role
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
 
 ### Description
@@ -119,7 +123,7 @@ An attacker with the `iam:AttachRolePolicy` permission can escalate privileges b
 An attacker would be able to use this method to attach the AdministratorAccess AWS managed policy to a role, giving them full administrator access to the AWS environment.
 
 ## 10. Creating/updating an inline policy for a user
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
 
 ### Description
@@ -132,7 +136,7 @@ An attacker with the `iam:PutUserPolicy` permission can escalate privileges by c
 Due to the ability to specify an arbitrary policy document with this method, the attacker could specify a policy that gives permission to perform any action on any resource, ultimately escalating to full administrator privileges in the AWS environment.
 
 ## 11. Creating/updating an inline policy for a group
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
 
 ### Description
@@ -145,7 +149,7 @@ An attacker with the `iam:PutGroupPolicy` permission can escalate privileges by 
 Due to the ability to specify an arbitrary policy document with this method, the attacker could specify a policy that gives permission to perform any action on any resource, ultimately escalating to full administrator privileges in the AWS environment.
 
 ## 12. Creating/updating an inline policy for a role
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
 
 ### Description
@@ -158,7 +162,7 @@ An attacker with the `iam:PutRolePolicy` permission can escalate privileges by c
 Due to the ability to specify an arbitrary policy document with this method, the attacker could specify a policy that gives permission to perform any action on any resource, ultimately escalating to full administrator privileges in the AWS environment.
 
 ## 13. Adding a user to a group
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
 
 ### Description
@@ -171,7 +175,7 @@ An attacker with the `iam:AddUserToGroup` permission can use it to add themselve
 The attacker would be able to gain privileges of any existing group in the account, which could range from no privilege escalation to full administrator access to the account.
 
 ## 14. Updating the AssumeRolePolicyDocument of a role
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
 
 ### Description
@@ -185,7 +189,7 @@ An attacker with the `iam:UpdateAssumeRolePolicy` and `sts:AssumeRole` permissio
 This would give the attacker the privileges that are attached to any role in the account, which could range from no privilege escalation to full administrator access to the account.
 
 ## 15. Passing a role to a new Lambda function, then invoking it
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
 
 ### Description
@@ -200,7 +204,7 @@ A user with the `iam:PassRole`, `lambda:CreateFunction`, and `lambda:InvokeFunct
 This would give a user access to the privileges associated with any Lambda service role that exists in the account, which could range from no privilege escalation to full administrator access to the account.
 
 ## 16. Passing a role to a new Lambda function, then invoking it cross-account
-### Reference(s)
+### How-To/Exploit Link(s)
 - None
 
 ### Description
@@ -215,7 +219,7 @@ A user with the `iam:PassRole`, `lambda:CreateFunction`, and `lambda:AddPermissi
 This would give a user access to the privileges associated with any Lambda service role that exists in the account, which could range from no privilege escalation to full administrator access to the account.
 
 ## 17. Passing a role to a new Lambda function, then triggering it with DynamoDB
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
 
 ### Description
@@ -232,7 +236,7 @@ A user with the `iam:PassRole`, `lambda:CreateFunction`, and `lambda:CreateEvent
 This would give an attacker access to the privileges associated with any Lambda service role that exists in the account, which could range from no privilege escalation to full administrator access to the account.
 
 ## 18. Updating the code of an existing Lambda function
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
 
 ### Description
@@ -245,7 +249,7 @@ An attacker with the `lambda:UpdateFunctionCode` permission could update the cod
 This would give an attacker access to the privileges associated with the Lambda service role that is attached to that function, which could range from no privilege escalation to full administrator access to the account.
 
 ## 19. Passing a role to a Glue Development Endpoint
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
 
 ### Description
@@ -259,7 +263,7 @@ An attacker with the `iam:PassRole` and `glue:CreateDevEndpoint` permissions cou
 This would give an attacker access to the privileges associated with any Glue service role that exists in the account, which could range from no privilege escalation to full administrator access to the account.
 
 ## 20. Updating an existing Glue Dev Endpoint
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
 
 ### Description
@@ -272,7 +276,7 @@ An attacker with the `glue:UpdateDevEndpoint` permission would be able to update
 This would give an attacker access to the privileges associated with the role attached to the specific Glue development endpoint, which could range from no privilege escalation to full administrator access to the account.
 
 ## 21. Passing a role to CloudFormation
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
 
 ### Description
@@ -286,7 +290,7 @@ An attacker with the `iam:PassRole` and `cloudformation:CreateStack` permissions
 This would give an attacker access to the privileges associated with the role that was passed when creating the CloudFormation stack, which could range from no privilege escalation to full administrator access to the account.
 
 ## 22. Passing a role to Data Pipeline
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
 
 ### Description
@@ -301,7 +305,7 @@ An attacker with the `iam:PassRole`, `datapipeline:CreatePipeline`, and `datapip
 This would give the attacker access to the privileges associated with the role that was passed when creating the pipeline, which could range from no privilege escalation to full administrator access to the account.
 
 ## 23. Creating a CodeStar project from a template
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/escalating-aws-iam-privileges-undocumented-codestar-api/
 - https://github.com/RhinoSecurityLabs/Cloud-Security-Research/blob/master/AWS/codestar_createprojectfromtemplate_privesc/CodeStarPrivEsc.py
 
@@ -315,7 +319,7 @@ An attacker with the `codestar:CreateProjectFromTemplate` permission can leverag
 This would give the attacker access to the privileges associated with the CodeStar project template that was chosen, along with the permissions granted to the CloudFormation role created along with the project. This results in a reasonable amount of privilege escalation, with a chance to full-administrator, depending on other resources/permissions in the environment. More information can be found in the references section.
 
 ## 24. Passing a role to a new CodeStar project
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/escalating-aws-iam-privileges-undocumented-codestar-api/
 
 ### Description
@@ -329,7 +333,7 @@ An attacker with the `codestar:CreateProject` and `iam:PassRole` permissions can
 This would give the attacker the ability to escalate to a full administrator, because the default CodeStar service role has permission to escalate privileges to an administrator. If a custom CodeStar service role has been created, the impact of this privilege escalation method may vary.
 
 ## 25. Creating a new CodeStar project and associating a team member
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/escalating-aws-iam-privileges-undocumented-codestar-api/
 
 ### Description
@@ -343,7 +347,7 @@ An attacker with the `codestar:CreateProject` and `codestar:AssociateTeamMember`
 This would give the attacker read-only access to multiple different AWS services and full CodeStar access on the project they are now an Owner of.
 
 ## 26. Adding a malicious Lambda layer to an existing Lambda function
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation-part-2
 
 ### Description
@@ -356,7 +360,7 @@ An attacker with the `lambda:UpdateFunctionConfiguration` permission can escalat
 This would give an attacker access to the privileges associated with the Lambda service role that is attached to that function, which could range from no privilege escalation to full administrator access to the account.
 
 ## 27. Passing a role to a new SageMaker Jupyter notebook
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation-part-2
 
 ### Description
@@ -371,7 +375,7 @@ An attacker with the `sagemaker:CreateNotebookInstance`, `sagemaker:CreatePresig
 This would give an attacker access to the privileges associated with the SageMaker service role that is attached to that Jupyter notebook, which could range from no privilege escalation to full administrator access to the account.
 
 ## 28. Gaining access to an existing SageMaker Jupyter notebook
-### Reference(s)
+### How-To/Exploit Link(s)
 - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation-part-2
 
 ### Description
@@ -382,3 +386,10 @@ An attacker with the `sagemaker:CreatePresignedNotebookInstanceUrl` permission c
 
 ### Potential Impact
 This would give an attacker access to the privileges associated with the SageMaker service role that is attached to that Jupyter notebook, which could range from no privilege escalation to full administrator access to the account.
+
+# Prior Research, References, and Resources
+This research wouldn't be possible without the excellent work from other security researchers in the past. Listed below are a few blogs and tools that stood as the forefront into AWS IAM privilege escalation and were great resources in the aggregation of these privilege escalation methods and the discovery of new ones. 
+- https://github.com/andresriancho/nimbostratus
+- https://blog.cloudsploit.com/privilege-escalation-in-amazon-web-services-cb4837365958
+- https://github.com/dagrz/aws_pwn
+- https://www.cyberark.com/threat-research-blog/cloud-shadow-admin-threat-10-permissions-protect/
